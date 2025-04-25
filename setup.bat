@@ -1,6 +1,6 @@
 @echo off
 rmdir /s /q .git
-python script.py
+python setup.py
 timeout /t 5 /nobreak >nul
 del setup.py
 del setup.sh
