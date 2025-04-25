@@ -1,4 +1,5 @@
 import shutil
+import stat
 
 from src.config import logger
 import os
@@ -47,10 +48,24 @@ def main():
         "requirements.txt",
         "setup.py"
         ]
-    try:
-        shutil.rmtree(".git")
-    except:
-        logger.warning("❌ Cannot remove folder")
+
+    git_dir = ".git"
+    if os.path.exists(git_dir):
+        try:
+            for root, dirs, files in os.walk(git_dir):
+                for dir_name in dirs:
+                    dir_path = os.path.join(root, dir_name)
+                    os.chmod(dir_path, stat.S_IWRITE | stat.S_IREAD | stat.S_IEXEC)
+                for file_name in files:
+                    file_path = os.path.join(root, file_name)
+                    os.chmod(file_path, stat.S_IWRITE | stat.S_IREAD)
+            shutil.rmtree(git_dir)
+            logger.info(f"✅ Folder {git_dir} removed.")
+        except Exception as e:
+            logger.warning(f"❌ Cannot remove folder {git_dir}.")
+    else:
+        logger.warning(f"❌ Folder {git_dir} not found.")
+
     for file in files_to_remove:
         try:
             os.remove(file)
