@@ -5,7 +5,6 @@
 ## 📌 Features
 
 - ***Storing passwords in encrypted form***
-- ***Multi-account support (different databases for different users)***
 - ***Complex password generator***
 - ***Quick service search***
 - ***Automatic deletion of messages***
