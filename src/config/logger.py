@@ -3,7 +3,7 @@ import logging
 
 def get_logger(name):
     logger = logging.getLogger(name)
-    logger.setLevel(logging.DEBUG)  # Временно для отладки
+    logger.setLevel(logging.INFO)
 
     formatter = logging.Formatter(
         '%(asctime)s - %(name)s - %(levelname)s - %(message)s'

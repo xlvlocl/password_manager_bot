@@ -49,7 +49,7 @@ import sqlite3
 
 
 def main():
-    db_path = "../db/passwords.db"
+    db_path = "db/passwords.db"
     os.makedirs(os.path.dirname(db_path), exist_ok=True)
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
