@@ -37,6 +37,7 @@ def main():
 
     with open(".env", "w", encoding="utf-8") as f:
         f.write(env_content)
+    logger.info("✅ Key generated")
 
 
 main()

@@ -1,6 +1,6 @@
 rm -rf .git
+rm -f README.md .gitignore requirements.txt setup.bat
 python3 setup.py
-sleep 5
+sleep 2
 rm -rf setup.py
-rm -rf setup.bat
 rm -rf setup.sh
