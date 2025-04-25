@@ -68,7 +68,7 @@ def register_list_handlers(bot):
                 bot, message, await bot.reply_to(message, "⛔ Access denied")
             )
 
-        cursor, connection = connect(message.from_user.id)
+        cursor, connection = connect()
         try:
             cursor.execute(
                 "SELECT rowid, encrypted_service FROM passwords ORDER BY rowid ASC"
@@ -98,7 +98,7 @@ def register_list_handlers(bot):
 
     @bot.callback_query_handler(func=lambda cb: cb.data.startswith("list_"))
     async def handle_pagination(callback):
-        cursor, connection = connect(callback.from_user.id)
+        cursor, connection = connect()
         try:
             _, page_str = callback.data.split("_")
             page = int(page_str)

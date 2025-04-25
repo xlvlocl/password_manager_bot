@@ -31,7 +31,7 @@ def register_add_handlers(bot):
 
         cursor, connection = None, None
         try:
-            cursor, connection = connect(message.from_user.id)
+            cursor, connection = connect()
 
             cursor.execute(
                 "SELECT 1 FROM passwords WHERE encrypted_service = ?",

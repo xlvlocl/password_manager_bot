@@ -36,7 +36,7 @@ def register_edit_handlers(bot):
                 message, f"❌ Invalid field '{field}'. Available: service, login, password, notes",
                 parse_mode="MarkdownV2"))
 
-        cursor, connection = connect(message.from_user.id)
+        cursor, connection = connect()
         try:
             if service_input.isdigit():
                 cursor.execute(

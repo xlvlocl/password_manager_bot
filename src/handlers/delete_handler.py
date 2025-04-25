@@ -23,7 +23,7 @@ def register_delete_handlers(bot):
             )
             return await delete(bot, message, await bot.reply_to(message, help_text, parse_mode="MarkdownV2"))
 
-        cursor, connection = connect(message.from_user.id)
+        cursor, connection = connect()
         try:
             if service_input.isdigit():
                 cursor.execute(

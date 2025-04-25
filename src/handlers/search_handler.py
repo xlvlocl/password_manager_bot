@@ -19,7 +19,7 @@ def register_search_handlers(bot):
             return await delete(bot, message, await bot.reply_to(
                 message, "🔍 Please enter a service name or ID", parse_mode="MarkdownV2"))
 
-        cursor, connection = connect(message.from_user.id)
+        cursor, connection = connect()
         try:
             if search_input.isdigit():
                 cursor.execute(
