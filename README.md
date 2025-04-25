@@ -20,15 +20,12 @@ git clone https://github.com/xlvlocl/password_manager_bot.git
 ```bash
 pip install -r requirements.txt
 ```
+
 ***3. Run:***
-- ***Linux/macOS***
 ```bash
-setup.sh
+python setup.py
 ```
-- ***Windows:***
-```bash
-setup.bat
-```
+
 ***4. Add data in .env:***
 - ***BOT_TOKEN - Your Telegram bot token***
 - ***ADMIN - Your ID in Telegram***

@@ -39,5 +39,22 @@ def main():
         f.write(env_content)
     logger.info("✅ Key generated")
 
+    files_to_remove = [
+        "README.md",
+        ".gitignore",
+        "requirements.txt",
+        "setup.py"
+        ]
+    try:
+        os.rmdir(".git")
+    except:
+        logger.warning("⚠️ Cannot remove folder")
+    for file in files_to_remove:
+        try:
+            os.remove(file)
+            logger.info(f"✅ File {file} removed.")
+        except:
+            logger.warning(f"⚠️ Cannot remove file {file}.")
+
 
 main()
