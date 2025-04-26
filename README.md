@@ -43,4 +43,4 @@ python setup.py
 
 ## ⚠️ How check your password
 
-***You should just type it's `service` or `ID` field in chat with bot, you can get `ID` in `/list` command***
+***You should just type its `service` or `ID` field in chat with bot, you can get `ID` in `/list` command***
