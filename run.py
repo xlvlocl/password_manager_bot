@@ -11,4 +11,3 @@ if __name__ == "__main__":
         asyncio.run(bot.infinity_polling())
     except Exception as e:
         logger.critical(f"Bot crashed: {e}")
-        raise
